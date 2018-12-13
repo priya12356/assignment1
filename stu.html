@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>marks of the sudents is sorted by using totalmarks and averages</title>
+   	<script type="text/javascript">
+       		var  s1=new student("rajani");
+      		var  s2=new student("chandana");
+       		var  s3=new student("mounika");
+       		var  s4=new student("pavitra");
+      		var  s5=new student("maruthi");
+       		var  sobj=[s1,s2,s3,s4,s5];
+       		function student(name)
+      		 {
+           		this.name=name;
+           		this.subj=new Array(Math.floor(Math.random() *100),Math.floor(Math.random()*100),Math.floor(Math.random() * 100));
+   
+            }
+      		 for(var i=0;i<sobj.length;i++)
+       		{
+           		total=0;
+           		for(var j=0;j<3;j++)
+           		{
+               		  sobj[i].total=total+sobj[i].subj[j];
+               }
+                       sobj[i].averg=sobj[i].total/3;
+          }
+                
+       		for(var k=0;k<sobj.length;k++)
+       		{
+         
+        	             sobj[k].name+"  "+sobj[k].total+" "+sobj[k].averg+"<br>";
+          }
+          document.writeln("<h1>This sorting is done based on marks</h1>"+"<br>"); 
+      		 sobj.sort(function(a,b){return b.total-a.total});
+       		     for(var i=0;i<sobj.length;i++)
+       		     {
+         		      document.writeln(sobj[i].name+"  "+sobj[i].total+"<br>");
+      		     }
+                  document.writeln("<h1>This sorting is done based on average marks</h1>"+"<br>"); 
+     		          sobj.sort(function(a,b){return b.averg-a.averg});
+       		     for(var k=0;k<sobj.length;k++)
+       		     {
+        	           document.writeln(sobj[k].name+"  "+sobj[k].averg+"<br>");
+      	       }
+    		     sobj.sort(function(a, b){
+     		     if(a.name < b.name) 
+      			            return -1 
+     		     else  
+       		          return 1
+      		  })  
+           document.writeln("<h1>This sorting is done based on names</h1>"+"<br>");
+    			      for(var k=0;k<sobj.length;k++)
+       			     {
+                   
+         	        	document.writeln(sobj[k].name+"  "+sobj[k].averg+"    "+sobj[k].total+"<br>");
+                 }
+     </script> 
+   </head>
+   </body>
+</html>
